@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MyFirstDapper.Service
 {
-    
+
     public class CourseService
     {
         courseRepository _CourseRepository;
@@ -16,7 +16,13 @@ namespace MyFirstDapper.Service
         public CourseModel GetCourseById(int id)
         {
             _CourseRepository = new courseRepository();
-            return _CourseRepository.GetById(id);   
+            return _CourseRepository.GetById(id);
+        }
+
+        public bool AddCourse(CourseModel course)
+        {
+            _CourseRepository = new courseRepository();
+            return _CourseRepository.Add(course);
         }
     }
 }
